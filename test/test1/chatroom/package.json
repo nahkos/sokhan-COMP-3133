@@ -1,0 +1,22 @@
+{
+  "name": "realtime",
+  "version": "1.0.0",
+  "description": "COMP 3133 Test 1 Realtime chat Socket io",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "keywords": [],
+  "author": "Sokhan Prum",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "moment": "^2.29.1",
+    "mongoose": "^6.2.1",
+    "socket.io": "^4.4.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
