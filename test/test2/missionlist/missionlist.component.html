@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="my-3">SpaceX Mission Launch List</h1>
+    </div>
+    <div class="col-md-4">
+      <aside class="filter-section-wrapper">
+        <div class="card">
+          <div class="card-body">
+            <div class="filter-header-wrap">
+              <h3>Filters</h3>
+              <a href="">Clear Filter</a>
+            </div>
+            <div class="filter-sub-title">
+              <h4>Details of Selected Mission</h4>
+            </div>
+            <ul class="filter-buttons">
+              <!-- <li
+                
+                [ngClass]="launchDetailSelectedIndex === i ? 'active' : ''"
+                *ngFor="let detail of missionDetails; let i = index"
+                (click)="filterDetailPrograms(i, detail)"
+              >
+                {{ detail }}
+              </li> -->
+
+              <li
+                [ngClass]="launchYearSelectedIndex === i ? 'active' : ''"
+                *ngFor="let year of launchYears; let i = index"
+                (click)="filterLaunchPrograms(i, year)"
+              >
+                {{ year }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <div class="col-md-8">
+      <p *ngIf="isLoading" class="loading-text">Loading...</p>
+      <div *ngIf="!isLoading" class="row">
+        <div *ngFor="let item of launchDataArray" class="col-md-4">
+          <app-missiondetails [data]="item"></app-missiondetails>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
