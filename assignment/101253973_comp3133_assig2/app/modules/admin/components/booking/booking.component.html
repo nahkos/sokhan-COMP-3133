@@ -1,0 +1,22 @@
+<h1>Welcome to Booking</h1>
+
+<button (click)="getBookingClick()">Get Booking</button>
+<button (click)="getSubmitClick()">Submit Booking</button>
+
+<div *ngFor="let booking of bookings | async">
+    <div class="card" style="width: 100%; margin-top: 10px">
+      <div class="card-body">
+        <h5 class="card-title">id: {{ booking['_id'] }}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">
+          listing title: {{ booking['listing']['listing_title'] }}
+        </h6>
+        <h6 class="card-subtitle mb-2 text-muted">
+          listing street: {{ booking['listing']['street'] }}
+        </h6>
+        <p class="card-text">user: {{ booking['user']['lastname'] }}</p>
+        <p class="card-text">createdAt: {{ booking['createdAt'] }}</p>
+        <p class="card-text">updatedAt: {{ booking['updatedAt'] }}</p>
+        
+      </div>
+    </div>
+  </div>

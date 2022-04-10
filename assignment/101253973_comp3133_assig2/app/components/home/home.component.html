@@ -1,0 +1,22 @@
+<h1>Welcome to Home</h1>
+
+<button (click)="getListingClick()">Get Listing</button>
+<button [routerLink]="'./login'">Login</button>
+<button [routerLink]="'./register'">Register</button>
+
+
+<div *ngFor="let listing of listings | async">
+  <div class="card" style="width: 100%; margin-top: 10px">
+    <div class="card-body">
+      <h5 class="card-title">id: {{ listing.listing_id }}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">
+        description: {{ listing.description }}
+      </h6>
+      <p class="card-text">street: {{ listing.street }}</p>
+      <p class="card-text">postal code: {{ listing.postal_code }}</p>
+      <p class="card-text">price: ${{ listing.price }}</p>
+      <p class="card-text">date: {{ listing.date }}</p>
+      <p class="card-text">username: {{ listing.username }}</p>
+    </div>
+  </div>
+</div>
